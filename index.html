@@ -1,0 +1,93 @@
+<html><head>
+  <title>Kitchen schedule</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div id = "line"class="jumbotron">
+          
+    <p>Hey, what's is your name? </p> 
+      <select id="input" onChange = "convert()">
+        <option value="a">Manish</option>
+  <option value="b">Prashant</option>
+       <option value="c">Alish</option>
+     <option value="d">Bishwa </option>
+   <p id ="result"></p>
+  </div>
+      
+</div>
+
+<script>
+
+var obj = JSON.parse('{
+    "1":{
+	"Manish":"chilling",
+	"Prashant":"dishwashing",
+	"Alish":"cooking",
+	"Bishwa":"chilling"
+	},
+	"2":{
+	"Manish":"chilling",
+	"Prashant":"cooking",
+	"Alish":"dishwashing",
+	"Bishwa":"chilling"
+	},
+	"3":{
+	"Manish":"dishwashing",
+	"Prashant":"chilling",
+	"Alish":"chilling",
+	"Bishwa":"cooking"
+	},
+	"4":{
+	"Manish":"chilling",
+	"Prashant":"dishwashing",
+	"Alish":"cooking",
+	"Bishwa":"chilling"
+	},
+	"5":{
+	"Manish":"cooking",
+	"Prashant":"chilling",
+	"Alish":"chilling",
+	"Bishwa":"dishwashing"
+	},
+	"6":{
+	"Manish":"chilling",
+	"Prashant":"cooking",
+	"Alish":"dishwashing",
+	"Bishwa":"chilling"
+	},
+	"7":{
+	"Manish":"dishwashing",
+	"Prashant":"chilling",
+	"Alish":"chilling",
+	"Bishwa":"dishwashing"
+	}
+	
+}');
+
+
+
+var d = new Date();
+var n = d.getDay();
+ var selectedInput= document.getElementById("input");
+ var tipeko= selectedInput[selectedInput.selectedIndex].value;
+
+var result = document.getElementById("result");
+
+function convert(){
+  result.innerHTML = tipeko+ ", Your job for today is "+ obj[n].tipeko;
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
